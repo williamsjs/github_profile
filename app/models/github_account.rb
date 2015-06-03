@@ -6,15 +6,15 @@ class GithubAccount
   end
 
   private def get_user_page
-    HTTParty.get("https://api.github.com/users/#{profile_name}?token_key=#{ENV['GITHUB_KEY']}")
+    HTTParty.get("https://api.github.com/users/#{profile_name}?access_token=#{ENV['GITHUB_KEY']}")
   end
 
   private def get_repos_page
-    HTTParty.get("https://api.github.com/users/#{profile_name}/repos?token_key=#{ENV['GITHUB_KEY']}")
+    HTTParty.get("https://api.github.com/users/#{profile_name}/repos?access_token=#{ENV['GITHUB_KEY']}")
   end
 
   private def get_organizations
-    HTTParty.get("https://api.github.com/users/#{profile_name}?token_key=#{ENV['GITHUB_KEY']}")
+    HTTParty.get("https://api.github.com/users/#{profile_name}?access_token=#{ENV['GITHUB_KEY']}")
   end
 
   def image
@@ -23,6 +23,10 @@ class GithubAccount
 
   def repos
     get_repos_page.map {|i| i['name']}
+  end
+
+  def repo_links
+    get_repos_page.map {|i| i['html_url']}
   end
 
   def location
