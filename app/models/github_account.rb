@@ -22,12 +22,11 @@ class GithubAccount
   end
 
   def repos
-    get_repos_page.map {|i| i['name']}
+    repos = {}
+    get_repos_page.each {|i| repos[i['name']] = i['html_url']}
+    repos
   end
 
-  def repo_links
-    get_repos_page.map {|i| i['html_url']}
-  end
 
   def location
     get_user_page['location']

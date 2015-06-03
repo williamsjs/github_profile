@@ -188,7 +188,7 @@ https://github.com/williamsjs?tab=repositories
                                         <span class="octicon octicon-location"></span><%= @location %></li>
                                     <li class="vcard-detail">
                                         <span class="octicon octicon-mail"></span>
-                                        <a class="email" href="mailto:<%=@email%>"><%= @email %></a>
+                                        <a class="email" href="mailto:<%@email%>"><%= @email %></a>
                                     </li>
                                     <li class="vcard-detail">
                                         <span class="octicon octicon-clock"></span>
@@ -282,7 +282,7 @@ https://github.com/williamsjs?tab=repositories
                                             </form>
                                         </div>
                                         <ul class="repo-list js-repo-list" data-filterable-for="your-repos-filter"
-                                        data-filterable-type="substring"><% @repos.each do |repo| %>
+                                        data-filterable-type="substring"><% @repos.each do |key, value| %>
                                             <li class="repo-list-item public source">
                                                 <div class="repo-list-stats">Ruby
                                                     <a class="repo-list-stat-item tooltipped tooltipped-s" href="/williamsjs/voter_api/stargazers"
@@ -297,7 +297,7 @@ https://github.com/williamsjs?tab=repositories
     </a>
                                                 </div>
                                                 <h3 class="repo-list-name">
-                                                    <a href="/williamsjs/voter_api"><%= repo %></a>
+                                                    <a href="<%= value %>"><%= key %></a>
                                                 </h3>
                                                 <p class="repo-list-meta">Updated
                                                     <time datetime="2015-05-28T12:36:52Z" is="relative-time" title="May 28, 2015, 8:36 AM EDT">5 days ago</time>
