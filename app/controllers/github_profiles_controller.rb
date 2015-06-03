@@ -11,5 +11,6 @@ class GithubProfilesController < ApplicationController
     @name = account.name
     @date_joined = account.joined_on
     @repos = account.repos
+    @orgs = account.orgs
   end
 end

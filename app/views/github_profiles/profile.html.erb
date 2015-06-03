@@ -210,13 +210,10 @@
         </a>
                                 </div>
                                 <div class="clearfix">
-                                    <h3>Organizations</h3>
-                                    <a href="/BikeSafety" aria-label="BikeSafety" class="tooltipped tooltipped-n avatar-group-item"
-                                    itemprop="follows"><img alt="@BikeSafety" class="avatar" height="42" src="https://avatars3.githubusercontent.com/u/11840822?v=3&amp;s=84" width="42"></a>
-                                    <a href="/Scott-Turner-vs-The-Legacy" aria-label="Scott-Turner-vs-The-Legacy"
-                                    class="tooltipped tooltipped-n avatar-group-item" itemprop="follows"><img alt="@Scott-Turner-vs-The-Legacy" class="avatar" height="42" src="https://avatars1.githubusercontent.com/u/12532750?v=3&amp;s=84" width="42"></a>
-                                    <a href="/NationalPublicSpotify" aria-label="NationalPublicSpotify" class="tooltipped tooltipped-n avatar-group-item"
-                                    itemprop="follows"><img alt="@NationalPublicSpotify" class="avatar" height="42" src="https://avatars2.githubusercontent.com/u/12647752?v=3&amp;s=84" width="42"></a>
+                                    <h3>Organizations</h3><% @orgs.each do |key, value| %>
+                                    <a href="/BikeSafety" aria-label="<%= key %>" class="tooltipped tooltipped-n avatar-group-item"
+                                    itemprop="follows"><img alt="" class="avatar" height="42" src=<%=value%> width="42"></a>
+                                    <% end %>
                                 </div>
                             </div>
                             <div class="column three-fourths">

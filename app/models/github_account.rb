@@ -14,7 +14,7 @@ class GithubAccount
   end
 
   private def get_organizations
-    HTTParty.get("https://api.github.com/users/#{profile_name}?access_token=#{ENV['GITHUB_KEY']}")
+    HTTParty.get("https://api.github.com/users/#{profile_name}/orgs?access_token=#{ENV['GITHUB_KEY']}")
   end
 
   def image
@@ -45,7 +45,12 @@ class GithubAccount
   end
 
   def joined_on
-    get_user_page['created_at'][0..9] 
+    get_user_page['created_at'][0..9]
+  end
+
+  def orgs
+    orgs = {}
+    get_organizations.each {|org| orgs[org['login'] = org['avatar_url']]}
   end
 
 end
