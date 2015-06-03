@@ -1,0 +1,9 @@
+<h1>Github Profile Lookup!</h1>
+
+<p>This page does exactly what the internet does.... only less!</p>
+
+<%= form_tag(github_profiles_profile_path) do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
