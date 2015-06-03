@@ -45,7 +45,7 @@ class GithubAccount
   end
 
   def joined_on
-    get_user_page['created_at'][0..9] if get_user_page['created_at'] != nil
+    get_user_page['created_at'][0..9] 
   end
 
 end
